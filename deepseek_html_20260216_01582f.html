@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE BEAUTY SPARK SALON · Kanpur</title>
+  <!-- clean HTML5 structure, responsive design, salon brand style -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: #fcf8f3;
+      color: #2e2e2e;
+      line-height: 1.6;
+    }
+
+    /* container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 1.5rem;
+    }
+
+    /* header + navigation */
+    .top-bar {
+      background: #3d2b1f;
+      color: #f3e3d3;
+      padding: 0.6rem 0;
+      font-size: 0.95rem;
+      border-bottom: 4px solid #c9a87c;
+    }
+
+    .top-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+    }
+
+    .contact-info span {
+      margin-right: 2rem;
+      white-space: nowrap;
+    }
+
+    .contact-info i { margin-right: 0.3rem; opacity: 0.8; }
+
+    .social-mini a {
+      color: #f3e3d3;
+      text-decoration: none;
+      margin-left: 1.2rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .social-mini a:hover { color: #e3c094; }
+
+    /* main header */
+    .main-header {
+      background: #fffcf7;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #eedac5;
+    }
+
+    .main-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-area h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      color: #4a2e1b;
+      line-height: 1.1;
+    }
+    .logo-area h1 span { 
+      font-weight: 600; 
+      color: #b47d56;
+      display: inline-block;
+      margin-left: 5px;
+    }
+    .logo-area .est {
+      font-size: 0.8rem;
+      color: #735e4b;
+      letter-spacing: 1px;
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #3f2c1c;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #b47d56;
+      color: #7b4f2e;
+    }
+
+    /* hero section — brand statement */
+    .hero {
+      background: linear-gradient(102deg, #f8efe6 0%, #fdf7f0 100%);
+      border-bottom: 1px solid #ebdad0;
+    }
+    .hero .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.5rem;
+      padding-top: 2.2rem;
+      padding-bottom: 2.2rem;
+    }
+    .hero-text {
+      flex: 1 1 300px;
+    }
+    .hero-text .badge {
+      background: #c9a87c;
+      color: #20170f;
+      display: inline-block;
+      padding: 0.25rem 1.2rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      border: 1px solid #b59064;
+    }
+    .hero-text h2 {
+      font-size: 2.8rem;
+      font-weight: 350;
+      color: #3a2417;
+      line-height: 1.2;
+    }
+    .hero-text h2 strong {
+      font-weight: 600;
+      color: #9c6f48;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      margin: 1.5rem 0 1rem;
+      color: #3b2d20;
+    }
+    .rating-stars {
+      font-size: 1.5rem;
+      color: #d4a373;
+      margin-bottom: 0.5rem;
+    }
+    .rating-text {
+      background: #f0e2d4;
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      display: inline-block;
+      font-weight: 600;
+    }
+    .hero-map {
+      flex: 1 1 300px;
+      background: #e1cfbc;
+      border-radius: 28px;
+      padding: 1rem;
+      box-shadow: 0 15px 25px -10px rgba(90, 60, 30, 0.2);
+      text-align: center;
+    }
+    .hero-map img {
+      max-width: 100%;
+      border-radius: 20px;
+      border: 3px solid white;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+    }
+    .address-card {
+      background: #fffcf5;
+      padding: 0.8rem;
+      border-radius: 20px;
+      margin-top: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* cards section: info & services */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 350;
+      color: #4d351f;
+      border-left: 8px solid #c9a87c;
+      padding-left: 1.3rem;
+      margin: 2rem 0 1.5rem 0;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 2rem;
+      padding: 1.8rem;
+      box-shadow: 0 12px 28px -10px rgba(78, 51, 31, 0.12);
+      border: 1px solid #f2e0d0;
+      transition: transform 0.15s;
+    }
+    .info-card:hover { transform: translateY(-4px); }
+
+    .info-card h3 {
+      font-size: 1.7rem;
+      font-weight: 380;
+      color: #5f3d24;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-card ul {
+      list-style: none;
+    }
+    .info-card li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      border-bottom: 1px dashed #eedbcb;
+      padding-bottom: 0.5rem;
+    }
+    .info-card li:last-child { border: none; }
+    .emoji-bullet { font-size: 1.5rem; }
+
+    .openhours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 1rem;
+      margin: 0.5rem 0;
+    }
+    .day { font-weight: 600; color: #4b311e; }
+    .time { color: #2c2c2c; }
+
+    .btn-wa {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 1rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      margin-top: 1.4rem;
+      transition: background 0.2s;
+      box-shadow: 0 6px 12px rgba(37, 211, 102, 0.2);
+    }
+    .btn-wa:hover { background: #20b859; }
+
+    .btn-yt {
+      background: #c4302b;
+      color: white;
+      padding: 0.9rem 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-left: 1rem;
+    }
+
+    .contact-section {
+      background: #f2e4d9;
+      border-radius: 2rem;
+      padding: 1.8rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .google-card {
+      background: #e9dbcf;
+      border-radius: 1.8rem;
+      padding: 1.6rem;
+      margin: 1.5rem 0;
+      border-left: 8px solid #b68f67;
+    }
+    .google-card a {
+      color: #2d4059;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px dotted;
+    }
+
+    /* footer */
+    .footer {
+      background: #2f2219;
+      color: #ddd0c2;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      border-top: 5px solid #b59064;
+    }
+
+    .footer .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .footer a { color: #efdbc8; text-decoration: none; border-bottom: 1px dotted; }
+
+    /* responsive */
+    @media (max-width: 650px) {
+      .top-bar .container { flex-direction: column; gap: 0.4rem; }
+      .main-header .container { flex-direction: column; text-align: center; }
+      .nav-links { margin: 0.5rem 0; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+      .hero-text h2 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- top bar with actual phone and contact -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="contact-info">
+        <span>📞 +91 87655 35788</span>
+        <span>✉️ thebeautyspark.kanpur@insta</span>
+        <span>📍 53 MIG, Sanigawan Rd</span>
+      </div>
+      <div class="social-mini">
+        <a href="#">📱 WhatsApp</a>
+        <a href="#">▶ YouTube</a>
+        <a href="#">⭐ 4.9</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- sticky header with logo & nav -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo-area">
+        <h1>THE BEAUTY SPARK<span>SALON</span></h1>
+        <div class="est">✨ est. 2020 · Kanpur ✨</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#">home</a>
+        <a href="#">services</a>
+        <a href="#">artist</a>
+        <a href="#">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- hero with rating and location preview -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <span class="badge">❤️‍🔥 rated 4.9 ★ by 223+ customers</span>
+        <h2>where <strong>spark</strong> meets <strong>elegance</strong></h2>
+        <p>Professional makeup artist <strong>Srashti Singh</strong> (trained by Jawed Habib) brings bridal & everyday glam to Kanpur.</p>
+        <div class="rating-stars">★★★★★ <span style="color: #5d3f28;">4.9</span></div>
+        <div class="rating-text">🔥 223 Google reviews · 5 star salon</div>
+        <div style="margin: 1.2rem 0 0.2rem;">
+          <span style="background:#e0cfbf; padding:0.4rem 1rem; border-radius: 2rem;">⭐ home service · combo pack · training institute</span>
+        </div>
+      </div>
+      <div class="hero-map">
+        <!-- marker / map placeholder -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='160' viewBox='0 0 300 160'%3E%3Crect width='300' height='160' fill='%23d6c0ab'/%3E%3Ccircle cx='100' cy='75' r='22' fill='%23b55a3a' stroke='%23fff' stroke-width='3'/%3E%3Cpath d='M96 84 L110 104 L85 104 L96 84' fill='%23aa4e2e'/%3E%3Ctext x='140' y='70' font-family='system-ui' font-weight='bold' fill='%232f2219' font-size='13'%3E53 MIG, Sanigawan Rd%3C/text%3E%3Ctext x='140' y='95' fill='%233d2b1b' font-size='11'%3EKDA Colony, Kanpur 208021%3C/text%3E%3C/svg%3E"
+             alt="map pin to salon location">
+        <div class="address-card">
+          📍 53 MIG, Sanigawan Rd, KDA Colony, Kanpur 208021 (Daheli side)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- two column grid: about & opening hours -->
+    <div class="grid-2col">
+      <!-- about card -->
+      <article class="info-card">
+        <h3>🌸 the spark story</h3>
+        <ul>
+          <li><span class="emoji-bullet">💁🏽‍♀️</span> Owned by Srashti Singh – professional makeup artist trained by Jawed Habib</li>
+          <li><span class="emoji-bullet">⭐</span> 4.9 rating (223 genuine reviews) on Google & Cherry Glitz</li>
+          <li><span class="emoji-bullet">🏆</span> Established 2020 · one of the most loved parlours in Sanigawan & Virsinghpur</li>
+          <li><span class="emoji-bullet">🚚</span> home service available · special combo packs</li>
+          <li><span class="emoji-bullet">🎓</span> also a recognised training institute: Spark'l Training (beauty courses)</li>
+        </ul>
+      </article>
+      <!-- opening hours card -->
+      <article class="info-card">
+        <h3>⏰ open hours</h3>
+        <div class="openhours-grid">
+          <span class="day">Monday</span><span class="time">10:00 am – 9:00 pm</span>
+          <span class="day">Tuesday</span><span class="time">10:00 am – 9:00 pm</span>
+          <span class="day">Wednesday</span><span class="time">10:00 am – 9:00 pm</span>
+          <span class="day">Thursday</span><span class="time">10:00 am – 9:00 pm</span>
+          <span class="day">Friday</span><span class="time">10:00 am – 9:00 pm</span>
+          <span class="day">Saturday</span><span class="time">10:00 am – 9:00 pm</span>
+          <span class="day">Sunday</span><span class="time">10:00 am – 9:00 pm</span>
+        </div>
+        <p style="margin-top: 1rem; font-style: italic;">✨ open all days · last appointment 8:30 pm</p>
+        <!-- additional contact from search: 8188814576 (whatsapp) and youtube -->
+        <div style="margin-top: 1.2rem;">
+          <a href="#" class="btn-wa">📲 WhatsApp 8188814576</a>
+          <a href="#" class="btn-yt">▶ Join YouTube</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- contact / extra details (phone, exact addresses) -->
+    <div class="contact-section">
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between;">
+        <div>
+          <h3 style="font-size: 1.8rem; font-weight: 350;">📞 direct contact</h3>
+          <p style="font-size: 1.4rem;"><strong>+91 87655 35788</strong> (call, bookings)</p>
+          <p>📱 WhatsApp business: 8188814576 — for home service & combos</p>
+          <p>📍 second location: 64/6, Gadaria Mohal, Near Gagan Plaza, Canal Road, Kanpur 208001 (training salon)</p>
+        </div>
+        <div style="background: white; border-radius: 2rem; padding: 1rem 1.8rem;">
+          <span style="font-weight:600;">📋 services</span>
+          <div style="display:flex; gap:0.5rem 1rem; flex-wrap:wrap; margin-top:0.4rem;">
+            <span>💄 bridal makeup</span>
+            <span>💇🏽 hair fixing</span>
+            <span>🧖🏽‍♀️ facials</span>
+            <span>🌿 mehndi</span>
+            <span>💅 nails</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google reviews & mentions block -->
+    <div class="google-card">
+      <h3 style="font-size: 2rem; margin-bottom: 0.6rem;">★★★★★ 4.9 · 223 reviews</h3>
+      <p style="font-size: 1.2rem;">⭐ featured on Google, Cherry Glitz & Justdial as top beauty salon in Kanpur (Sanigawan, KDA Colony).</p>
+      <div style="margin: 1.4rem 0 0.6rem; background: #ffffffb3; padding: 1rem; border-radius: 1.2rem;">
+        <span>📌 "THE BEAUTY SPARK SALON is physically situated in 53 MIG, Sanigawan Rd, KDA Colony, Kanpur, Uttar Pradesh 208021. It is a recognized location within the Daheli area." — Google business profile</span>
+      </div>
+      <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+        <span><a href="#">🔗 Cherry Glitz listing</a></span>
+        <span><a href="#">🔗 Justdial: Hair fixing services</a></span>
+        <span><a href="#">📸 55+ photos on Spark'l Training Institute</a></span>
+      </div>
+    </div>
+
+    <!-- youtube + social proof -->
+    <div style="display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: space-between; background: #faf0e7; border-radius: 2rem; padding: 1.5rem; margin: 2rem 0;">
+      <div>
+        <span style="font-size: 2rem;">▶️</span> <strong>youtube:</strong> @thebeautysparksalon <br>
+        <span style="color: #6f4f34;">"Your best parlour combo pack" — join WhatsApp & youtube</span>
+      </div>
+      <div>
+        <span style="background: #0000000f; padding: 0.5rem 1rem; border-radius: 2rem;">⭐ 4.6/5 from 5 reviews (training institute)</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer with all essential links and attribution -->
+  <footer class="footer">
+    <div class="container">
+      <div>© 2025 THE BEAUTY SPARK SALON — established 2020, Kanpur.</div>
+      <div>
+        <a href="#">privacy</a> · <a href="#">contact</a> · 
+        <a href="#">📍 53 MIG Sanigawan Rd, KDA Colony, Kanpur 208021</a>
+      </div>
+      <div>📞 +91 87655 35788 | 🌐 thebeautyspark.in (placeholder)</div>
+    </div>
+  </footer>
+
+  <!-- small interaction / working buttons (just demo) no js needed but keep -->
+  <script>
+    // make all external placeholder links open gently (just for demonstration)
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (link.classList.contains('btn-wa')) alert('📲 WhatsApp 8188814576 (demo)\nIn real site: open wa.me/918188814576');
+        else if (link.classList.contains('btn-yt')) alert('▶ YouTube channel: https://www.youtube.com/channel/UCy5cEHaxKwegXQ_614Y8JvQ');
+        else alert('🔗 link placeholder — real profile would open');
+      });
+    });
+  </script>
+</body>
+</html>
